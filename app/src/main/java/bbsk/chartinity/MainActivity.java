@@ -55,11 +55,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         tab1.setTabListener(this);
 
         ActionBar.Tab tab2 = actionBar.newTab();
-        tab2.setText("Images");
+        tab2.setText("History");
         tab2.setTabListener(this);
 
         ActionBar.Tab tab3 = actionBar.newTab();
-        tab3.setText("Result");
+        tab3.setText("Profile");
         tab3.setTabListener(this);
 
         actionBar.addTab(tab1);
@@ -84,8 +84,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         editor.commit();
         finish();
 
-        // end removing SharedPreferences
-
         // starting log in activity
         Intent i = new Intent(MainActivity.this, LogIn.class);
         startActivity(i);
@@ -103,5 +101,11 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     @Override
     public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+    }
+
+    public void onBackPressed() {
+        finish();
+        LogIn.back_press.finish();
+
     }
 }

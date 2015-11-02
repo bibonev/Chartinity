@@ -13,7 +13,7 @@ import android.content.SharedPreferences;
  */
 public class LogIn extends Activity {
 
-
+    public static Activity back_press;
     // initializing variable for SharedPreferences - Saving log in details
     public static final String PREFS_NAME = "LoginPrefs";
 
@@ -24,7 +24,7 @@ public class LogIn extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
-
+        back_press = this;
 
         // check if the user have already logged in and if so, he skip the log in process
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
