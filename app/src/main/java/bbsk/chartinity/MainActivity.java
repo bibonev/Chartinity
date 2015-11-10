@@ -2,6 +2,7 @@ package bbsk.chartinity;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -9,6 +10,9 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.TextView;
 import android.content.SharedPreferences;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 /**
  * Created by Boyan on 10/24/2015.
@@ -20,6 +24,13 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     // initializing variable for SharedPreferences - Saving log in details
     public static final String PREFS_NAME = "LoginPrefs";
+    public static final String PREFS_ID = "Verifying Id";
+    public static final String DEFAULT = "N/A";
+    DatabaseHandler handler = new DatabaseHandler(this);
+
+    private String id;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,19 +77,26 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         actionBar.addTab(tab2);
         actionBar.addTab(tab3);
 
-        // Showing user's username to test correctly log in
-        String username = getIntent().getStringExtra("Username");
+    }
 
-        TextView tv = (TextView)findViewById(R.id.username_profile);
-        tv.setText(username);
+    protected void onStart(){
+        super.onStart();
+
+        SharedPreferences sharedPreferences = getSharedPreferences(PREFS_ID, Context.MODE_PRIVATE);
+        id = sharedPreferences.getString("id", DEFAULT);
+
+    }
+
+    // gets all attributes of a user
+    public String getCurrentAttribute(String attribute){
+        return handler.getUserAttribute(id, attribute);
     }
 
     public void onLogOutButtonClick(View v){
-
         /**
          * Removing SharedPreferences when user want to log out
          */
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.remove("logged");
         editor.commit();
@@ -87,7 +105,6 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         // starting log in activity
         Intent i = new Intent(MainActivity.this, LogIn.class);
         startActivity(i);
-
     }
 
     @Override
@@ -106,6 +123,5 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
     public void onBackPressed() {
         finish();
         LogIn.back_press.finish();
-
     }
 }

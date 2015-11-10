@@ -2,5 +2,7 @@
     <string name="app_name">Chartinity</string>
     <string name="logIn">LogIn</string>
     <string name="emptyString" />
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
 
 </resources>
