@@ -60,10 +60,7 @@ public class SignUp extends Activity {
             Intent i = new Intent(SignUp.this, LogIn.class);
             startActivity(i);
 
-
+            finish();
         }
-
     }
-
-
 }

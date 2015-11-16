@@ -4,28 +4,44 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <ImageView
+        android:layout_width="380dp"
+        android:layout_height="460dp"
+        android:id="@+id/imgPreview" />
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:weightSum="1">
 
         <Button
-            android:layout_width="166dp"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:text="Take Photo"
             android:id="@+id/btnTakePhoto"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.03"
-            android:onClick="btnTakePhotoClicked" />
+            android:layout_gravity="top"
+            android:onClick="btnTakePhotoClicked"
+            android:layout_weight="0.33" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Choose photo"
+            android:id="@+id/btnChoosePhoto"
+            android:layout_weight="0.33"
+            android:layout_gravity="top"
+            android:onClick="onChoosePhotoClick" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Proceed"
+            android:id="@+id/btnProceed"
+            android:layout_gravity="top"
+            android:layout_weight="0.33" />
 
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/imgPreview"
-        android:layout_gravity="center_horizontal" />
 
 
 </LinearLayout>
