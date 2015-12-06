@@ -3,10 +3,12 @@ package bbsk.chartinity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.content.SharedPreferences;
@@ -33,6 +35,9 @@ public class LogIn extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.login_chartinity);
         back_press = this;
+
+        Button button = (Button) findViewById(R.id.button_go_signUp);
+        button.setPaintFlags(button.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
 
         // check if the user have already logged in and if so, he skip the log in process
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
@@ -109,5 +114,6 @@ public class LogIn extends Activity {
     public void onSignUp_LogIn_ButtonClick(View v){
         Intent i = new Intent(LogIn.this,SignUp.class);
         startActivity(i);
+
     }
 }

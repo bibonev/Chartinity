@@ -12,7 +12,6 @@
             android:label="@string/logIn"
             android:theme="@android:style/Theme.NoTitleBar"
             android:launchMode="singleInstance">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -26,6 +25,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUp"></activity>
+        <activity android:name=".SignUp"
+            android:theme="@android:style/Theme.NoTitleBar"></activity>
     </application>
 </manifest>

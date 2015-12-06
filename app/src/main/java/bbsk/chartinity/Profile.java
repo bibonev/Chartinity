@@ -23,8 +23,17 @@ public class Profile extends android.support.v4.app.Fragment {
     public void onStart(){
         super.onStart();
 
-        TextView tv = (TextView)this.getActivity().findViewById(R.id.username_profile);
-        tv.setText(((MainActivity) getActivity()).getCurrentAttribute("username"));
+        TextView tv_username = (TextView)this.getActivity().findViewById(R.id.username_profile);
+        tv_username.setText(((MainActivity) getActivity()).getCurrentAttribute("username"));
+
+        TextView tv_name = (TextView)this.getActivity().findViewById(R.id.name_profile);
+        tv_name.setText(((MainActivity) getActivity()).getCurrentAttribute("name"));
+
+        TextView tv_email = (TextView)this.getActivity().findViewById(R.id.email_profile);
+        tv_email.setText(((MainActivity) getActivity()).getCurrentAttribute("email"));
+
+        TextView tv_pass = (TextView)this.getActivity().findViewById(R.id.password_profile);
+        tv_pass.setText(((MainActivity) getActivity()).getCurrentAttribute("password"));
     }
     public void onLogOutButtonClick(View v){
 

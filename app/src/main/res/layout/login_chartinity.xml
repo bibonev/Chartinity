@@ -7,56 +7,69 @@
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center_horizontal"
         android:text="Chartinity"
-        android:id="@+id/textView" />
+        android:id="@+id/textView"
+        android:textSize="55sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="italic" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:id="@+id/username_logIn"
         android:background="@drawable/rounded_edittext"
         android:layout_marginBottom="20dp"
-        android:padding="10dp"
+        android:padding="15dp"
+        android:textSize="20sp"
+        android:textColor="@color/inputText"
         android:hint="@string/username_hint"
-        android:textStyle="italic"
-        android:typeface="serif" />
-
-        <!--<corners android:radius="5dp" /> -->
+        android:typeface="serif"/>
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:inputType="textPassword"
         android:singleLine="true"
+        android:background="@drawable/rounded_edittext"
         android:ems="10"
         android:id="@+id/password_logIn"
-        android:background="@color/colorWhite"
+        android:layout_marginBottom="20dp"
+        android:padding="15dp"
+        android:textSize="20sp"
+        android:textColor="@color/inputText"
+        android:hint="@string/password_hint"
+        android:typeface="serif"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Log In"
+        android:id="@+id/button_logIn"
+        android:onClick="onLogInButtonClick"
+        android:textSize="20sp"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/rounded_buttonlogin"
+        android:typeface="serif"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:id="@+id/button_go_signUp"
+        android:onClick="onSignUp_LogIn_ButtonClick"
+        android:background="@color/colorMain"
         android:padding="10dp"
-        android:hint="@string/password_hint"/>
+        android:textSize="17sp"
+        android:textColor="@color/colorWhite"
+        android:typeface="serif"
+        android:textStyle="italic" />
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Log In"
-            android:id="@+id/button_logIn"
-            android:onClick="onLogInButtonClick" />
-
-        <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:id="@+id/button_go_signUp"
-            android:onClick="onSignUp_LogIn_ButtonClick" />
-
-        </LinearLayout>
 
 </LinearLayout>

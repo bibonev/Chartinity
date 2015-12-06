@@ -2,6 +2,7 @@ package bbsk.chartinity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -16,18 +17,32 @@ public class SignUp extends Activity {
 
     // attribute which make the connection between signUp clas and databaseHandler class
     DatabaseHandler handler = new DatabaseHandler(this);
+    public static Activity sign_end;
+    private EditText username;
+    private EditText name;
+    private EditText email;
+    private EditText password;
+    private EditText confirm_password;
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup_chartinity);
+        sign_end = this;
+    }
+
+    protected void onStart(){
+        super.onStart();
+        username = (EditText)findViewById(R.id.username_signUp);
+        name = (EditText)findViewById(R.id.name_signUp);
+        email = (EditText)findViewById(R.id.email_signUp);
+        password = (EditText)findViewById(R.id.password_signUp);
+        password.setTypeface(Typeface.DEFAULT);
+        confirm_password = (EditText)findViewById(R.id.confirmPassword_signUp);
+        confirm_password.setTypeface(Typeface.DEFAULT);
+
     }
     public void onSignUpClick(View v){
-
-        EditText username = (EditText)findViewById(R.id.username_signUp);
-        EditText name = (EditText)findViewById(R.id.name_signUp);
-        EditText email = (EditText)findViewById(R.id.email_signUp);
-        EditText password = (EditText)findViewById(R.id.password_signUp);
-        EditText confirm_password = (EditText)findViewById(R.id.confirmPassword_signUp);
 
         String userStr = username.getText().toString();
         String nameStr = name.getText().toString();

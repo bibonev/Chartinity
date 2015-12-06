@@ -8,10 +8,9 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 import android.content.SharedPreferences;
-import android.widget.Toast;
-
 import java.util.ArrayList;
 
 /**
@@ -30,14 +29,18 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
     private String id;
 
-
+    //TODO:everything
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chartinity);
+        final ActionBar actionBara = getActionBar();
 
-
+        //actionBara.setHomeButtonEnabled(false);
+        actionBara.setDisplayShowHomeEnabled(false);
+        actionBara.setDisplayUseLogoEnabled(false);
+        actionBara.setDisplayShowTitleEnabled(false);
 
         viewPager=(ViewPager) findViewById(R.id.pager);
         viewPager.setAdapter(new MyAdapter(getSupportFragmentManager()));
