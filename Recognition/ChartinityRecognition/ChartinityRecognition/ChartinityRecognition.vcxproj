@@ -147,11 +147,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Chartinity.h" />
+    <ClInclude Include="CornerHarris.h" />
     <ClInclude Include="EdgeDetection.h" />
+    <ClInclude Include="HoughLineTransform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chartinity.cpp" />
+    <ClCompile Include="CornerHarris.cpp" />
     <ClCompile Include="EdgeDetection.cpp" />
+    <ClCompile Include="HoughLineTransform.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

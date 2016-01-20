@@ -21,12 +21,24 @@
     <ClInclude Include="EdgeDetection.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="HoughLineTransform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CornerHarris.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chartinity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EdgeDetection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HoughLineTransform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CornerHarris.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
